@@ -11,7 +11,7 @@ import java.io.IOException;
 public class App extends Application {
 
     private static Scene scene;
-    // NICELY DONE YOU DUMB FUCKING BITCH
+    // NICELY DONE YOU DUMB FUCKING BITCH NO FUCKING WAY
 
     @Override
     public void start(Stage stage) throws IOException {
