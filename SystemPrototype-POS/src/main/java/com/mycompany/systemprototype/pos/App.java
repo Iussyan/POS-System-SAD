@@ -10,7 +10,7 @@ import java.io.IOException;
 
 public class App extends Application {
 
-    private static Scene scene; // TESTINGA JUD O
+    private static Scene scene; // TESTINGA JUD Oi oh
 
     @Override
     public void start(Stage stage) throws IOException {
