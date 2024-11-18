@@ -1,0 +1,5 @@
+com\mycompany\systemprototype\pos\App.class
+com\mycompany\systemprototype\pos\ForesightController.class
+com\mycompany\systemprototype\pos\HomeController.class
+com\mycompany\systemprototype\pos\SecondaryController.class
+module-info.class
