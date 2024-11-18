@@ -23,6 +23,6 @@ public class HomeController {
     @FXML
     private JFXToggleNode transBtn;
 
-    // noooo
+    // burikat
 
 }
