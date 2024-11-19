@@ -10,13 +10,14 @@ import java.io.IOException;
 
 public class App extends Application {
 
-    private static Scene scene; // TESTINGA JUD Oi oh
+    private static Scene scene;
 
     @Override
     public void start(Stage stage) throws IOException {
         scene = new Scene(loadFXML("home"));
         stage.setScene(scene);
         stage.setTitle("POS System for Micro-Businesses");
+        stage.getIcons().add(new javafx.scene.image.Image("/res/qcu.png"));
         
         stage.show();
     }
