@@ -1,21 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXToggleNode?>
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane minHeight="630.0" minWidth="753.0" prefHeight="677.0" prefWidth="1020.0" stylesheets="@/styles/foresight.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.systemprototype.pos.HomeController">
+<BorderPane fx:id="basePane" minHeight="630.0" minWidth="753.0" prefHeight="677.0" prefWidth="1020.0" stylesheets="@/styles/foresight.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.systemprototype.pos.HomeController">
    <center>
       <BorderPane prefHeight="200.0" prefWidth="200.0" styleClass="p" BorderPane.alignment="CENTER">
          <top>
@@ -141,125 +140,65 @@
          <children>
             <HBox alignment="CENTER" layoutY="-2.0" prefHeight="50.0" prefWidth="1020.0" styleClass="navbar" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-2.0">
                <children>
-                  <JFXToggleNode fx:id="homeBtn" graphicTextGap="10.0" prefHeight="50.0" prefWidth="150.0" styleClass="navbar-btn" text="Dashboard" textFill="#ffd900">
+                  <ToggleButton fx:id="homeBtn" graphicTextGap="10.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="150.0" styleClass="navbar-btn" text="Dashboard" wrapText="true">
                      <graphic>
                         <FontAwesomeIcon fill="#ffd900" glyphName="HOME" glyphStyle="HOME" selectionEnd="0" selectionStart="0" size="30" styleClass="navbar-icon" text="" wrappingWidth="27.142857551574707" />
                      </graphic>
-                     <selectedColor>
-                        <Color red="0.36000001430511475" green="0.1979999989271164" blue="0.09000000357627869" />
-                     </selectedColor>
-                     <unSelectedColor>
-                        <Color red="1.0" green="0.07407407462596893" blue="0.07407407462596893" opacity="0.0" />
-                     </unSelectedColor>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="homeNav" />
+                     </toggleGroup>
                      <font>
-                        <Font name="System Bold" size="14.0" />
+                        <Font name="System Bold" size="15.0" />
                      </font>
-                  </JFXToggleNode>
-                  <JFXToggleNode fx:id="invBtn" graphicTextGap="10.0" prefHeight="50.0" prefWidth="150.0" styleClass="navbar-btn" text="Inventory" textFill="#ffd900">
-                     <selectedColor>
-                        <Color red="0.36000001430511475" green="0.1979999989271164" blue="0.09000000357627869" />
-                     </selectedColor>
-                     <unSelectedColor>
-                        <Color red="1.0" green="0.07407407462596893" blue="0.07407407462596893" opacity="0.0" />
-                     </unSelectedColor>
+                  </ToggleButton>
+                  <ToggleButton fx:id="invBtn" graphicTextGap="10.0" layoutX="361.0" layoutY="10.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="150.0" styleClass="navbar-btn" text="Inventory" toggleGroup="$homeNav" wrapText="true">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
                      <graphic>
                         <FontAwesomeIcon fill="#ffd900" glyphName="STACK_OVERFLOW" glyphStyle="ARCHIVE" size="30" styleClass="navbar-icon" />
                      </graphic>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
+                  </ToggleButton>
+                  <ToggleButton fx:id="statsBtn" graphicTextGap="10.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="150.0" styleClass="navbar-btn" text="Stats" toggleGroup="$homeNav" wrapText="true">
                      <font>
-                        <Font name="System Bold" size="14.0" />
+                        <Font name="System Bold" size="15.0" />
                      </font>
-                  </JFXToggleNode>
-                  <JFXToggleNode fx:id="statsBtn" graphicTextGap="10.0" prefHeight="50.0" prefWidth="150.0" styleClass="navbar-btn" text="Stats" textFill="#ffd900">
-                     <selectedColor>
-                        <Color red="0.36000001430511475" green="0.1979999989271164" blue="0.09000000357627869" />
-                     </selectedColor>
-                     <unSelectedColor>
-                        <Color red="1.0" green="0.07407407462596893" blue="0.07407407462596893" opacity="0.0" />
-                     </unSelectedColor>
                      <graphic>
                         <FontAwesomeIcon fill="#ffd900" glyphName="BAR_CHART" glyphStyle="YOUTUBE" size="28" styleClass="navbar-icon" />
                      </graphic>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
+                  </ToggleButton>
+                  <ToggleButton fx:id="staffsBtn" graphicTextGap="10.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="150.0" styleClass="navbar-btn" text="Staffs" toggleGroup="$homeNav" wrapText="true">
                      <font>
-                        <Font name="System Bold" size="14.0" />
+                        <Font name="System Bold" size="15.0" />
                      </font>
-                  </JFXToggleNode>
-                  <JFXToggleNode fx:id="staffsBtn" graphicTextGap="10.0" prefHeight="50.0" prefWidth="150.0" styleClass="navbar-btn" text="Staffs" textFill="#ffd900">
-                     <selectedColor>
-                        <Color red="0.36000001430511475" green="0.1979999989271164" blue="0.09000000357627869" />
-                     </selectedColor>
-                     <unSelectedColor>
-                        <Color red="1.0" green="0.07999999821186066" blue="0.07999999821186066" opacity="0.0" />
-                     </unSelectedColor>
                      <graphic>
                         <FontAwesomeIcon fill="#ffd900" glyphName="USERS" glyphStyle="USERS" size="30" styleClass="navbar-icon" />
                      </graphic>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
+                  </ToggleButton>
+                  <ToggleButton fx:id="transBtn" graphicTextGap="10.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="150.0" styleClass="navbar-btn" text="Transaction" toggleGroup="$homeNav" wrapText="true">
                      <font>
-                        <Font name="System Bold" size="14.0" />
+                        <Font name="System Bold" size="15.0" />
                      </font>
-                  </JFXToggleNode>
-                  <JFXToggleNode fx:id="transBtn" graphicTextGap="10.0" prefHeight="50.0" prefWidth="150.0" styleClass="navbar-btn" text="Transaction" textFill="#ffd900">
-                     <selectedColor>
-                        <Color red="0.36000001430511475" green="0.1979999989271164" blue="0.09000000357627869" />
-                     </selectedColor>
-                     <unSelectedColor>
-                        <Color red="1.0" green="0.07407407462596893" blue="0.07407407462596893" opacity="0.0" />
-                     </unSelectedColor>
                      <graphic>
                         <FontAwesomeIcon fill="#ffd900" glyphName="QRCODE" glyphStyle="USERS" size="30" styleClass="navbar-icon" />
                      </graphic>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
+                  </ToggleButton>
+                  <ToggleButton fx:id="notifBtn" graphicTextGap="10.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="150.0" styleClass="navbar-btn" text="Notification" toggleGroup="$homeNav" wrapText="true">
                      <font>
-                        <Font name="System Bold" size="14.0" />
+                        <Font name="System Bold" size="15.0" />
                      </font>
-                  </JFXToggleNode>
-                  <JFXToggleNode fx:id="optionBtn1" graphicTextGap="10.0" layoutX="673.0" layoutY="10.0" prefHeight="50.0" prefWidth="150.0" styleClass="navbar-btn" text="Notifications" textFill="#ffd900">
-                     <selectedColor>
-                        <Color red="0.3607843220233917" green="0.19607843458652496" blue="0.09019608050584793" />
-                     </selectedColor>
-                     <unSelectedColor>
-                        <Color red="1.0" green="0.07407407462596893" blue="0.07407407462596893" opacity="0.0" />
-                     </unSelectedColor>
                      <graphic>
                         <FontAwesomeIcon fill="#ffcf81" glyphName="BELL" glyphStyle="USERS" size="30" styleClass="navbar-icon" />
                      </graphic>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
+                  </ToggleButton>
+                  <ToggleButton fx:id="optionBtn" graphicTextGap="10.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="150.0" styleClass="navbar-btn" text="Options" toggleGroup="$homeNav" wrapText="true">
                      <font>
-                        <Font name="System Bold" size="14.0" />
+                        <Font name="System Bold" size="15.0" />
                      </font>
-                  </JFXToggleNode>
-                  <JFXToggleNode fx:id="optionBtn" graphicTextGap="10.0" prefHeight="50.0" prefWidth="150.0" styleClass="navbar-btn" text="Options" textFill="#ffd900">
-                     <selectedColor>
-                        <Color red="0.36000001430511475" green="0.1979999989271164" blue="0.09000000357627869" />
-                     </selectedColor>
-                     <unSelectedColor>
-                        <Color red="1.0" green="0.07407407462596893" blue="0.07407407462596893" opacity="0.0" />
-                     </unSelectedColor>
                      <graphic>
                         <FontAwesomeIcon fill="#ffd900" glyphName="BARS" glyphStyle="USERS" size="30" styleClass="navbar-icon" />
                      </graphic>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                     <font>
-                        <Font name="System Bold" size="14.0" />
-                     </font>
-                  </JFXToggleNode>
+                  </ToggleButton>
                </children>
             </HBox>
          </children>

@@ -1,5 +1,5 @@
 .paned {
-    -fx-background-radius: 10px; 
+    -fx-background-radius: 10px;
     -fx-background-color: #fff5b4;
 }
 
@@ -8,62 +8,69 @@
 }
 
 .navbar {
-	-fx-background-color: #170e00;
+    -fx-background-color: #170e00;
 }
 
 .navbar-btn {
     -fx-background-color: #170e00;
-	-fx-text-fill: #ffcf81;
-	-fx-selected-background-color: #5c3217;
-	rippler-fill: true;
-	-fx-ripple-color: #e8c375; /*ripple colors of homepage btns*/
+    -fx-text-fill: #ffcf81;
+    -fx-background-radius: 0px;
 }
 
 .navbar-btn:hover {
     -fx-background-color: #5c3217;
-	-fx-ripple-color: #e8c375;
+    -fx-border-color: #c7b280;
+    -fx-border-inset: 0px 0px 0px 0px;
+    -fx-border-width: 0px 0px 3px 0px;
+}
+
+.navbar-btn:selected {
+    -fx-background-color: #5c3217;
+    -fx-border-color: #c7b280;
+    -fx-border-inset: 5px 0px 0px 0px;
+    -fx-border-width: 0px 0px 3px 0px;
 }
 
 .navbar-icon {
-	-fx-fill: #ffcf81;
+    -fx-fill: #ffcf81;
 }
 
 .awesome-icons {
-	-fx-fill: #c7b280;
+    -fx-fill: #c7b280;
 }
 
 .home-page-btn {
-	-fx-text-fill: #c7b280;
-	-fx-background-color: #170e00;
-	-fx-background-radius: 40px;
-	-fx-border-color: #c7b280;
-	-fx-border-insets: 8px;
-	-fx-border-radius: 35px;
+    -fx-text-fill: #c7b280;
+    -fx-background-color: #170e00;
+    -fx-background-radius: 40px;
+    -fx-border-color: #c7b280;
+    -fx-border-insets: 8px;
+    -fx-border-radius: 35px;
 }
 
 .dashboard-font-color {
-	-fx-text-fill: #c7b280;
+    -fx-text-fill: #c7b280;
 }
 
 /*
 .home-page-btn:hover {
-	-fx-cursor: HAND;
-	-fx-background-color: #94591c;
+        -fx-cursor: HAND;
+        -fx-background-color: #94591c;
 }
 */
 
 .stock-alert {
-	-fx-text-fill: #c7b280;
-	-fx-background-color: #170e00;
-	-fx-background-radius: 20px;
-	-fx-border-color: #ff0000;
-	-fx-border-insets: 8px;
-	-fx-border-radius: 15px;
+    -fx-text-fill: #c7b280;
+    -fx-background-color: #170e00;
+    -fx-background-radius: 20px;
+    -fx-border-color: #ff0000;
+    -fx-border-insets: 8px;
+    -fx-border-radius: 15px;
 }
 
 .stock-alert:hover {
-	-fx-cursor: HAND;
-	-fx-background-color: #94591c;
-	-fx-text-fill: #000000;
-	-fx-border-width: 5px;
+    -fx-cursor: HAND;
+    -fx-background-color: #94591c;
+    -fx-text-fill: #000000;
+    -fx-border-width: 5px;
 }
