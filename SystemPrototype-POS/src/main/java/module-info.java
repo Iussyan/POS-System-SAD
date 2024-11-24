@@ -7,5 +7,6 @@ module com.mycompany.systemprototype.pos {
     exports com.mycompany.systemprototype.pos;
     requires com.jfoenix;
     requires fontawesomefx;
+    requires org.controlsfx.controls;
     
 }

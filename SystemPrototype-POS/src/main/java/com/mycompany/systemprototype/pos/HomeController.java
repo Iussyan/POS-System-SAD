@@ -1,42 +1,74 @@
 package com.mycompany.systemprototype.pos;
 
-import com.jfoenix.controls.JFXToggleNode;
+import com.jfoenix.controls.JFXButton;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.control.ToggleButton;
+import javafx.scene.Node;
 import javafx.scene.control.ToggleGroup;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 
 public class HomeController implements Initializable {
 
-   @FXML
+    @FXML
+    private JFXButton analytics;
+
+    @FXML
     private BorderPane basePane;
 
     @FXML
-    private ToggleButton homeBtn;
+    private JFXButton items;
 
     @FXML
-    private ToggleGroup homeNav;
+    private AnchorPane mainStage;
 
     @FXML
-    private ToggleButton invBtn;
+    private JFXButton prodSales;
 
     @FXML
-    private ToggleButton notifBtn;
+    private JFXButton stockIn;
 
     @FXML
-    private ToggleButton optionBtn;
-
-    @FXML
-    private ToggleButton staffsBtn;
-
-    @FXML
-    private ToggleButton statsBtn;
-
-    @FXML
-    private ToggleButton transBtn;
+    private JFXButton team;
+    
+    private String loc = "";
+    
+    public void goTeam() {
+        loc = "team";
+        loadScene(loc);
+    }
+    
+    public void goProd() {
+        loc = "inventory";
+        loadScene(loc);
+    }
+    
+    private void loadScene(String fxml) {
+        try {
+            mainStage.getChildren().clear();
+            mainStage.setPrefSize(-1, -1);
+            mainStage.setMinSize(100, 100);
+                       
+            FXMLLoader load = new FXMLLoader(getClass().getResource(fxml + ".fxml"));
+            
+            Node innNode = load.load();
+            innNode.setManaged(true);
+            
+            mainStage.getChildren().add(innNode);
+            
+            AnchorPane.setTopAnchor(innNode, 0.0);
+            AnchorPane.setLeftAnchor(innNode, 0.0);
+            AnchorPane.setBottomAnchor(innNode, 0.0);
+            AnchorPane.setRightAnchor(innNode, 0.0);
+            
+        } catch (IOException e) {
+            System.err.println("Error loading scene: " + e.getMessage());
+        }
+    }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
