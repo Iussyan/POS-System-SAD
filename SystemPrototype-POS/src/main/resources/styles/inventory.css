@@ -79,6 +79,9 @@
 .search-btn:hover {
     -fx-border-color: #00eeff;
 }
+.search-btn:active {
+    -fx-border-color: #000000;
+}
 
 .buttons {
     -fx-text-fill: #000000;

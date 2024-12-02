@@ -93,3 +93,7 @@
     -fx-text-fill: #000000;
     -fx-border-width: 5px;
 }
+
+.toggle:hover {
+    -fx-background-color: #56b0e4;
+}

@@ -1,49 +1,103 @@
 package com.mycompany.systemprototype.pos;
 
-import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXToggleNode;
+import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
 import java.io.IOException;
 import java.net.URL;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
+import javafx.animation.Animation;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
+import javafx.scene.control.Label;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.util.Duration;
 
 public class HomeController implements Initializable {
 
     @FXML
-    private JFXButton analytics;
+    private JFXToggleNode analytics;
 
     @FXML
     private BorderPane basePane;
 
     @FXML
-    private JFXButton items;
-
-    @FXML
     private AnchorPane mainStage;
 
     @FXML
-    private JFXButton prodSales;
+    private ToggleGroup nav;
 
     @FXML
-    private JFXButton stockIn;
+    private JFXToggleNode prodSales;
 
     @FXML
-    private JFXButton team;
+    private JFXToggleNode stockIn;
+
+    @FXML
+    private JFXToggleNode team;
+
+    @FXML
+    private JFXToggleNode transaction;
+    
+    @FXML
+    private FontAwesomeIcon statusIcon;
+
+    @FXML
+    private Label statusTxt;
+    
+    @FXML
+    private Label date;
+    
+    @FXML
+    private Label time;
+    
+    @FXML
+    private Label uName;
+    
+    @FXML
+    private Label position;
     
     private String loc = "";
     
+    @FXML
     public void goTeam() {
+        team.setSelected(true);
         loc = "team";
         loadScene(loc);
     }
     
-    public void goProd() {
+    @FXML
+    public void goStocks() {
+        stockIn.setSelected(true);
         loc = "inventory";
+        loadScene(loc);
+    }
+    
+    @FXML
+    public void goTrans() {
+        transaction.setSelected(true);
+        loc = "transactions";
+        loadScene(loc);
+    }
+    
+    @FXML
+    public void goSales() {
+        prodSales.setSelected(true);
+        loc = "prodSales";
+        loadScene(loc);
+    }
+    
+    @FXML
+    public void goAnalytics() {
+        analytics.setSelected(true);
+        loc = "analytics";
         loadScene(loc);
     }
     
@@ -72,8 +126,20 @@ public class HomeController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        ToggleGroup homeNav = new ToggleGroup();
+        nav = new ToggleGroup();
+        
+        Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(1), e -> updateDateTime()));
+        timeline.setCycleCount(Animation.INDEFINITE);
+        timeline.play();
     }
-
+    
+    private void updateDateTime() {
+        LocalDateTime currentDateTime = LocalDateTime.now();
+        DateTimeFormatter dates = DateTimeFormatter.ofPattern("MMM dd, yyyy");
+        DateTimeFormatter times = DateTimeFormatter.ofPattern("hh:mm:ss a");
+        
+        date.setText(currentDateTime.format(dates));
+        time.setText(currentDateTime.format(times));
+    }
 
 }

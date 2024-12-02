@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+
+<TabPane prefWidth="535.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="popupWindows.AddStaffController">
+   <tabs>
+      <Tab fx:id="step1" closable="false" styleClass="inner-field" text="Step 1">
+         <content>
+            <BorderPane prefHeight="428.0" prefWidth="535.0">
+               <center>
+                  <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0">
+                     <stylesheets>
+                        <URL value="@/styles/addproduct.css" />
+                     </stylesheets>
+                     <BorderPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </BorderPane.margin>
+                     <children>
+                        <Label layoutX="38.0" layoutY="32.0" text="First Name" wrapText="true">
+                           <font>
+                              <Font name="Tahoma" size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="fn" layoutX="38.0" layoutY="57.0" prefHeight="27.0" prefWidth="203.0" promptText="Ex. Juan">
+                           <font>
+                              <Font name="Tahoma" size="12.0" />
+                           </font>
+                           <styleClass>
+                              <String fx:value="inner-border-not-round" />
+                              <String fx:value="inner-field" />
+                           </styleClass>
+                        </TextField>
+                        <Label layoutX="283.0" layoutY="32.0" text="Middle Name" wrapText="true">
+                           <font>
+                              <Font name="Tahoma" size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="mn" layoutX="283.0" layoutY="57.0" prefHeight="27.0" prefWidth="203.0" promptText="Ex. Poblacion">
+                           <font>
+                              <Font name="Tahoma" size="12.0" />
+                           </font>
+                           <styleClass>
+                              <String fx:value="inner-border-not-round" />
+                              <String fx:value="inner-field" />
+                           </styleClass>
+                        </TextField>
+                        <Label layoutX="38.0" layoutY="98.0" text="Last Name" wrapText="true">
+                           <font>
+                              <Font name="Tahoma" size="18.0" />
+                           </font>
+                        </Label>
+                        <Separator layoutX="14.0" layoutY="334.0" prefHeight="2.0" prefWidth="524.0" style="-fx-background-color: #000000;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                        <JFXButton fx:id="next1" layoutX="398.0" layoutY="355.0" onAction="#nextBtn1" prefHeight="25.0" prefWidth="96.0" styleClass="buttons" text="Next &gt;&gt;" />
+                        <JFXButton disable="true" layoutX="289.0" layoutY="355.0" prefHeight="35.0" prefWidth="96.0" styleClass="buttons" text="&lt;&lt; Previous" />
+                        <Label layoutX="129.0" layoutY="40.0" text="Limit : 100 chars" wrapText="true">
+                           <font>
+                              <Font name="Tahoma" size="10.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="395.0" layoutY="40.0" text="Limit : 100 chars" wrapText="true">
+                           <font>
+                              <Font name="Tahoma" size="10.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="126.0" layoutY="105.0" text="*extension name" wrapText="true">
+                           <font>
+                              <Font name="Tahoma" size="10.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="ln" layoutX="38.0" layoutY="122.0" prefHeight="27.0" prefWidth="203.0" promptText="Ex. Dela Cruz Jr. (if applicable)">
+                           <font>
+                              <Font name="Tahoma" size="12.0" />
+                           </font>
+                           <styleClass>
+                              <String fx:value="inner-border-not-round" />
+                              <String fx:value="inner-field" />
+                           </styleClass>
+                        </TextField>
+                        <ComboBox fx:id="sex" layoutX="283.0" layoutY="121.0" prefHeight="25.0" prefWidth="203.0" promptText="-- Select Sex --">
+                           <styleClass>
+                              <String fx:value="inner-border-not-round" />
+                              <String fx:value="inner-field" />
+                           </styleClass>
+                        </ComboBox>
+                        <Label layoutX="283.0" layoutY="98.0" text="Sex" wrapText="true">
+                           <font>
+                              <Font name="Tahoma" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="39.0" layoutY="163.0" text="Birth Date" wrapText="true">
+                           <font>
+                              <Font name="Tahoma" size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="age" layoutX="283.0" layoutY="188.0" prefHeight="27.0" prefWidth="203.0" promptText="Ex. 18">
+                           <font>
+                              <Font name="Tahoma" size="12.0" />
+                           </font>
+                           <styleClass>
+                              <String fx:value="inner-border-not-round" />
+                              <String fx:value="inner-field" />
+                           </styleClass>
+                        </TextField>
+                        <Label layoutX="284.0" layoutY="163.0" text="Age" wrapText="true">
+                           <font>
+                              <Font name="Tahoma" size="18.0" />
+                           </font>
+                        </Label>
+                        <DatePicker fx:id="bday" editable="false" layoutX="38.0" layoutY="187.0" prefHeight="27.0" prefWidth="203.0" promptText="-- Select a Date --" showWeekNumbers="true">
+                           <styleClass>
+                              <String fx:value="inner-border-not-round" />
+                              <String fx:value="inner-field" />
+                           </styleClass>
+                        </DatePicker>
+                        <TextField fx:id="age1" layoutX="38.0" layoutY="257.0" prefHeight="27.0" prefWidth="203.0" promptText="Ex. 09632929292">
+                           <font>
+                              <Font name="Tahoma" size="12.0" />
+                           </font>
+                           <styleClass>
+                              <String fx:value="inner-border-not-round" />
+                              <String fx:value="inner-field" />
+                           </styleClass>
+                        </TextField>
+                        <Label layoutX="39.0" layoutY="230.0" text="Contact Number" wrapText="true">
+                           <font>
+                              <Font name="Tahoma" size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <styleClass>
+                        <String fx:value="inner-border-not-round" />
+                        <String fx:value="p" />
+                     </styleClass>
+                  </AnchorPane>
+               </center>
+               <top>
+                  <AnchorPane prefHeight="34.0" prefWidth="596.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <HBox alignment="CENTER_LEFT" prefHeight="42.0" prefWidth="531.0" style="-fx-border-color: #000000; -fx-border-width: 0px 0px 1px 0px;" styleClass="p">
+                           <children>
+                              <Label text="Staff Details" wrapText="true">
+                                 <font>
+                                    <Font name="Tahoma" size="24.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="20.0" />
+                                 </HBox.margin>
+                              </Label>
+                           </children>
+                        </HBox>
+                     </children>
+                  </AnchorPane>
+               </top>
+               <styleClass>
+                  <String fx:value="inner-border-not-round" />
+                  <String fx:value="pb" />
+               </styleClass>
+            </BorderPane>
+         </content>
+      </Tab>
+      <Tab fx:id="step2" closable="false" styleClass="inner-field" text="Step 2">
+         <content>
+            <BorderPane prefHeight="463.0" prefWidth="463.0">
+               <center>
+                  <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0">
+                     <stylesheets>
+                        <URL value="@/styles/addproduct.css" />
+                     </stylesheets>
+                     <BorderPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </BorderPane.margin>
+                     <children>
+                        <Label layoutX="38.0" layoutY="33.0" text="Username" wrapText="true">
+                           <font>
+                              <Font name="Tahoma" size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="stockSize" layoutX="38.0" layoutY="58.0" prefHeight="27.0" prefWidth="203.0" promptText="Must be unique">
+                           <font>
+                              <Font name="Tahoma" size="12.0" />
+                           </font>
+                           <styleClass>
+                              <String fx:value="inner-border-not-round" />
+                              <String fx:value="inner-field" />
+                           </styleClass>
+                        </TextField>
+                        <Separator layoutX="14.0" layoutY="334.0" prefHeight="2.0" prefWidth="524.0" style="-fx-background-color: #000000;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                        <JFXButton fx:id="save" layoutX="398.0" layoutY="355.0" onAction="#onSave" prefHeight="25.0" prefWidth="96.0" styleClass="buttons" text="Add Staff" />
+                        <JFXButton fx:id="previous2" layoutX="289.0" layoutY="355.0" onAction="#prevBtn3" prefHeight="25.0" prefWidth="96.0" styleClass="buttons" text="&lt;&lt; Previous" />
+                        <Label layoutX="38.0" layoutY="127.0" text="Password" wrapText="true">
+                           <font>
+                              <Font name="Tahoma" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="38.0" layoutY="222.0" text="Role" wrapText="true">
+                           <font>
+                              <Font name="Tahoma" size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="stockSize1" layoutX="38.0" layoutY="248.0" prefHeight="27.0" prefWidth="203.0" promptText="Ex. Admin, Employee">
+                           <font>
+                              <Font name="Tahoma" size="12.0" />
+                           </font>
+                           <styleClass>
+                              <String fx:value="inner-border-not-round" />
+                              <String fx:value="inner-field" />
+                           </styleClass>
+                        </TextField>
+                        <PasswordField fx:id="pass" layoutX="38.0" layoutY="153.0" prefHeight="27.0" prefWidth="203.0" promptText="Don't forget your password!">
+                           <styleClass>
+                              <String fx:value="inner-border-not-round" />
+                              <String fx:value="inner-field" />
+                           </styleClass>
+                           <font>
+                              <Font name="Tahoma" size="12.0" />
+                           </font>
+                        </PasswordField>
+                        <AnchorPane layoutX="261.0" layoutY="16.0" prefHeight="307.0" prefWidth="247.0" AnchorPane.bottomAnchor="85.0" AnchorPane.rightAnchor="13.0" AnchorPane.topAnchor="14.0">
+                           <styleClass>
+                              <String fx:value="inner-border-not-round" />
+                              <String fx:value="inner-field" />
+                           </styleClass>
+                           <children>
+                              <AnchorPane layoutX="27.0" layoutY="19.0" prefHeight="178.0" prefWidth="197.0" styleClass="inner-border-not-round" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="17.0">
+                                 <children>
+                                    <FontAwesomeIcon glyphName="USER" layoutX="26.0" layoutY="162.0" size="15em" />
+                                 </children>
+                              </AnchorPane>
+                              <JFXButton fx:id="chooseImg" layoutX="66.0" layoutY="235.0" onAction="#staffImg" prefHeight="35.0" prefWidth="121.0" styleClass="buttons" text="Choose Image" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                     <styleClass>
+                        <String fx:value="p" />
+                        <String fx:value="inner-border-not-round" />
+                     </styleClass>
+                  </AnchorPane>
+               </center>
+               <top>
+                  <AnchorPane prefHeight="34.0" prefWidth="596.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <HBox alignment="CENTER_LEFT" prefHeight="42.0" prefWidth="531.0" style="-fx-border-color: #000000; -fx-border-width: 0px 0px 1px 0px;" styleClass="p">
+                           <children>
+                              <Label text="Staff Account Details" wrapText="true">
+                                 <font>
+                                    <Font name="Tahoma" size="24.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="20.0" />
+                                 </HBox.margin>
+                              </Label>
+                           </children>
+                        </HBox>
+                     </children>
+                  </AnchorPane>
+               </top>
+               <styleClass>
+                  <String fx:value="inner-border-not-round" />
+                  <String fx:value="pb" />
+               </styleClass>
+            </BorderPane>
+         </content>
+      </Tab>
+   </tabs>
+</TabPane>

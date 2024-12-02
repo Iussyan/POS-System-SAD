@@ -18,7 +18,6 @@
 <?import javafx.scene.layout.Region?>
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
-<?import org.controlsfx.control.SearchableComboBox?>
 
 <BorderPane fx:id="basePane" minHeight="583.0" minWidth="1020.0" prefHeight="583.0" prefWidth="1020.0" stylesheets="@/styles/inventory.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.systemprototype.pos.InventoryController">
    <center>
@@ -34,7 +33,7 @@
                               <String fx:value="inner-border-not-round" />
                            </styleClass>
                            <children>
-                              <TableView fx:id="tableView" layoutX="8.0" layoutY="48.0" prefHeight="362.0" prefWidth="998.0" AnchorPane.bottomAnchor="6.0" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="6.0" AnchorPane.topAnchor="46.0">
+                              <TableView fx:id="tableView" layoutX="8.0" layoutY="48.0" onMouseClicked="#getSelectedColumn" prefHeight="362.0" prefWidth="998.0" AnchorPane.bottomAnchor="6.0" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="6.0" AnchorPane.topAnchor="46.0">
                                 <columns>
                                   <TableColumn prefWidth="498.0" text="C1" />
                                   <TableColumn prefWidth="498.0" text="C2" />
@@ -43,10 +42,10 @@
                                     <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                                  </columnResizePolicy>
                               </TableView>
-                              <HBox alignment="CENTER" fillHeight="false" prefHeight="44.0" prefWidth="445.0" spacing="5.0" AnchorPane.leftAnchor="10.0">
+                              <HBox alignment="CENTER" fillHeight="false" layoutX="16.0" prefHeight="44.0" prefWidth="489.0" spacing="5.0" AnchorPane.leftAnchor="14.0">
                                  <children>
-                                    <TextField fx:id="searchField" onKeyTyped="#enableButton" promptText="Search.." styleClass="search-field" HBox.hgrow="ALWAYS" />
-                                    <JFXButton fx:id="searchBtn" contentDisplay="GRAPHIC_ONLY" onAction="#searchItem" prefHeight="87.0" prefWidth="57.0" styleClass="search-btn" HBox.hgrow="NEVER">
+                                    <TextField fx:id="searchField" promptText="Search.." styleClass="search-field" HBox.hgrow="ALWAYS" />
+                                    <JFXButton fx:id="searchBtn" contentDisplay="GRAPHIC_ONLY" onAction="#searchItem" prefHeight="87.0" prefWidth="57.0" styleClass="search-field" HBox.hgrow="NEVER">
                                        <graphic>
                                           <FontAwesomeIcon glyphName="SEARCH" />
                                        </graphic>
@@ -58,25 +57,6 @@
                                  <padding>
                                     <Insets bottom="5.0" top="10.0" />
                                  </padding>
-                              </HBox>
-                              <HBox alignment="CENTER" fillHeight="false" prefHeight="44.0" prefWidth="445.0" spacing="5.0" AnchorPane.rightAnchor="10.0">
-                                 <children>
-                                    <SearchableComboBox fx:id="filter" styleClass="search-field" HBox.hgrow="ALWAYS">
-                                       <HBox.margin>
-                                          <Insets top="5.0" />
-                                       </HBox.margin></SearchableComboBox>
-                                    <JFXButton fx:id="filterBtn" contentDisplay="GRAPHIC_ONLY" onAction="#doFilter" prefHeight="29.0" prefWidth="57.0" styleClass="search-btn">
-                                       <effect>
-                                          <DropShadow />
-                                       </effect>
-                                       <graphic>
-                                          <FontAwesomeIcon glyphName="FILTER" text="" />
-                                       </graphic>
-                                       <HBox.margin>
-                                          <Insets top="5.0" />
-                                       </HBox.margin>
-                                    </JFXButton>
-                                 </children>
                               </HBox>
                            </children>
                            <BorderPane.margin>
@@ -92,24 +72,24 @@
                            <children>
                               <HBox alignment="CENTER" layoutX="11.0" layoutY="11.0" prefHeight="56.0" prefWidth="591.0" spacing="20.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0">
                                  <children>
+                                    <JFXButton fx:id="overview" disable="true" onAction="#prodOverview" prefHeight="25.0" prefWidth="240.0" styleClass="buttons" text="Overview">
+                                       <graphic>
+                                          <FontAwesomeIcon glyphName="LIST_ALT" size="1.2em" />
+                                       </graphic>
+                                    </JFXButton>
                                     <JFXButton fx:id="addBtn" graphicTextGap="5.0" onAction="#addProduct" prefHeight="25.0" prefWidth="240.0" styleClass="buttons" text="Add Product">
                                        <graphic>
                                           <FontAwesomeIcon glyphName="PLUS_SQUARE_ALT" size="1.2em" />
                                        </graphic>
                                     </JFXButton>
-                                    <JFXButton fx:id="editBtn" onAction="#editProduct" prefHeight="33.0" prefWidth="234.0" styleClass="buttons" text="Edit Product">
+                                    <JFXButton fx:id="editBtn" disable="true" onAction="#editProduct" prefHeight="33.0" prefWidth="234.0" styleClass="buttons" text="Edit Product">
                                        <graphic>
                                           <FontAwesomeIcon glyphName="EDIT" size="1.2em" />
                                        </graphic>
                                     </JFXButton>
-                                    <JFXButton fx:id="removeBtn" alignment="CENTER" onAction="#removeProduct" prefHeight="25.0" prefWidth="240.0" styleClass="buttons" text="Remove Product">
+                                    <JFXButton fx:id="removeBtn" alignment="CENTER" disable="true" onAction="#removeProduct" prefHeight="25.0" prefWidth="240.0" styleClass="buttons" text="Remove Product">
                                        <graphic>
                                           <FontAwesomeIcon glyphName="MINUS_SQUARE_ALT" size="1.2em" wrappingWidth="11.314285278320312" />
-                                       </graphic>
-                                    </JFXButton>
-                                    <JFXButton fx:id="addNote" onAction="#addNotes" prefHeight="25.0" prefWidth="240.0" styleClass="buttons" text="Add Notes">
-                                       <graphic>
-                                          <FontAwesomeIcon glyphName="THUMB_TACK" size="1.2em" />
                                        </graphic>
                                     </JFXButton>
                                  </children>
@@ -120,7 +100,7 @@
                      <top>
                         <HBox alignment="CENTER_LEFT" prefHeight="0.0" prefWidth="1020.0" style="-fx-border-color: #000000; -fx-border-width: 0px 2px 2px 2px;" BorderPane.alignment="CENTER">
                            <children>
-                              <JFXButton fx:id="refresh" alignment="CENTER" contentDisplay="TOP" graphicTextGap="0.0" prefHeight="47.0" prefWidth="70.0" ripplerFill="#98d0d4" style="-fx-border-width: 0px 1px 0px 0px; -fx-border-color: #000000;" text="Refresh">
+                              <JFXButton fx:id="refresh" alignment="CENTER" contentDisplay="TOP" graphicTextGap="0.0" onAction="#reflectTable" prefHeight="47.0" prefWidth="70.0" ripplerFill="#98d0d4" style="-fx-border-width: 0px 1px 0px 0px; -fx-border-color: #000000;" text="Refresh">
                                  <HBox.margin>
                                     <Insets />
                                  </HBox.margin>
@@ -132,38 +112,7 @@
                                  </font>
                               </JFXButton>
                               <Region prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
-                              <JFXToggleNode fx:id="nameAsc" contentDisplay="TOP" graphicTextGap="0.0" prefHeight="47.0" prefWidth="83.0" style="-fx-border-width: 0px 1px 0px 1px; -fx-border-color: #000000;" text="Ascending">
-                                 <graphic>
-                                    <FontAwesomeIcon glyphName="SORT_ALPHA_ASC" size="1.5em" wrappingWidth="14.0" />
-                                 </graphic>
-                                 <selectedColor>
-                                    <Color red="0.5960784554481506" green="0.8156862854957581" blue="0.8313725590705872" />
-                                 </selectedColor>
-                                 <toggleGroup>
-                                    <ToggleGroup fx:id="sort" />
-                                 </toggleGroup>
-                                 <font>
-                                    <Font name="Tahoma" size="12.0" />
-                                 </font>
-                                 <tooltip>
-                                    <Tooltip text="Sort by Name in Ascending Order" />
-                                 </tooltip>
-                              </JFXToggleNode>
-                              <JFXToggleNode fx:id="nameDesc" contentDisplay="TOP" graphicTextGap="0.0" prefHeight="44.0" prefWidth="83.0" style="-fx-border-width: 0px 1px 0px 0px; -fx-border-color: #000000;" text="Descending" toggleGroup="$sort">
-                                 <graphic>
-                                    <FontAwesomeIcon glyphName="SORT_ALPHA_DESC" size="1.5em" wrappingWidth="18.0" />
-                                 </graphic>
-                                 <selectedColor>
-                                    <Color red="0.597599983215332" green="0.8145066499710083" blue="0.8299999833106995" />
-                                 </selectedColor>
-                                 <font>
-                                    <Font name="Tahoma" size="12.0" />
-                                 </font>
-                                 <tooltip>
-                                    <Tooltip text="Sort by Name in Descending Order" />
-                                 </tooltip>
-                              </JFXToggleNode>
-                              <JFXToggleNode fx:id="itemidAsc" contentDisplay="TOP" graphicTextGap="0.0" prefHeight="47.0" prefWidth="83.0" style="-fx-border-width: 0px 1px 0px 0px; -fx-border-color: #000000;" text="Ascending" toggleGroup="$sort">
+                              <JFXToggleNode fx:id="itemidAsc" contentDisplay="TOP" graphicTextGap="0.0" onAction="#sortIdAsc" prefHeight="47.0" prefWidth="83.0" selected="true" style="-fx-border-width: 0px 1px 0px 0px; -fx-border-color: #000000;" text="Ascending">
                                  <graphic>
                                     <FontAwesomeIcon glyphName="SORT_NUMERIC_ASC" size="1.5em" wrappingWidth="14.0" />
                                  </graphic>
@@ -176,8 +125,11 @@
                                  <tooltip>
                                     <Tooltip text="Sort by ItemID in Ascending Order" />
                                  </tooltip>
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="sort" />
+                                 </toggleGroup>
                               </JFXToggleNode>
-                              <JFXToggleNode fx:id="itemidDesc" contentDisplay="TOP" graphicTextGap="0.0" prefHeight="47.0" prefWidth="83.0" style="-fx-border-width: 0px 1px 0px 0px; -fx-border-color: #000000;" text="Descending" toggleGroup="$sort">
+                              <JFXToggleNode fx:id="itemidDesc" contentDisplay="TOP" graphicTextGap="0.0" onAction="#sortIdDesc" prefHeight="47.0" prefWidth="83.0" style="-fx-border-width: 0px 1px 0px 0px; -fx-border-color: #000000;" text="Descending" toggleGroup="$sort">
                                  <graphic>
                                     <FontAwesomeIcon glyphName="SORT_NUMERIC_DESC" size="1.5em" wrappingWidth="14.0" />
                                  </graphic>
@@ -191,7 +143,35 @@
                                     <Tooltip text="Sort by ItemID in Descending Order" />
                                  </tooltip>
                               </JFXToggleNode>
-                              <JFXToggleNode fx:id="amountAsc" contentDisplay="TOP" graphicTextGap="0.0" prefHeight="47.0" prefWidth="83.0" style="-fx-border-width: 0px 1px 0px 0px; -fx-border-color: #000000;" text="Ascending" toggleGroup="$sort">
+                              <JFXToggleNode fx:id="nameAsc" contentDisplay="TOP" graphicTextGap="0.0" onAction="#sortNameAsc" prefHeight="47.0" prefWidth="83.0" style="-fx-border-width: 0px 1px 0px 1px; -fx-border-color: #000000;" text="Ascending" toggleGroup="$sort">
+                                 <graphic>
+                                    <FontAwesomeIcon glyphName="SORT_ALPHA_ASC" size="1.5em" wrappingWidth="14.0" />
+                                 </graphic>
+                                 <selectedColor>
+                                    <Color red="0.5960784554481506" green="0.8156862854957581" blue="0.8313725590705872" />
+                                 </selectedColor>
+                                 <font>
+                                    <Font name="Tahoma" size="12.0" />
+                                 </font>
+                                 <tooltip>
+                                    <Tooltip text="Sort by Name in Ascending Order" />
+                                 </tooltip>
+                              </JFXToggleNode>
+                              <JFXToggleNode fx:id="nameDesc" contentDisplay="TOP" graphicTextGap="0.0" onAction="#sortNameDesc" prefHeight="44.0" prefWidth="83.0" style="-fx-border-width: 0px 1px 0px 0px; -fx-border-color: #000000;" text="Descending" toggleGroup="$sort">
+                                 <graphic>
+                                    <FontAwesomeIcon glyphName="SORT_ALPHA_DESC" size="1.5em" wrappingWidth="18.0" />
+                                 </graphic>
+                                 <selectedColor>
+                                    <Color red="0.597599983215332" green="0.8145066499710083" blue="0.8299999833106995" />
+                                 </selectedColor>
+                                 <font>
+                                    <Font name="Tahoma" size="12.0" />
+                                 </font>
+                                 <tooltip>
+                                    <Tooltip text="Sort by Name in Descending Order" />
+                                 </tooltip>
+                              </JFXToggleNode>
+                              <JFXToggleNode fx:id="amountAsc" contentDisplay="TOP" graphicTextGap="0.0" onAction="#sortStockAsc" prefHeight="47.0" prefWidth="83.0" style="-fx-border-width: 0px 1px 0px 0px; -fx-border-color: #000000;" text="Ascending" toggleGroup="$sort">
                                  <graphic>
                                     <FontAwesomeIcon glyphName="SORT_AMOUNT_ASC" size="1.5em" wrappingWidth="14.0" />
                                  </graphic>
@@ -205,7 +185,7 @@
                                     <Tooltip text="Sort by Stocks in Ascending Order" />
                                  </tooltip>
                               </JFXToggleNode>
-                              <JFXToggleNode fx:id="amountDesc" contentDisplay="TOP" graphicTextGap="0.0" prefHeight="47.0" prefWidth="83.0" text="Descending" toggleGroup="$sort">
+                              <JFXToggleNode fx:id="amountDesc" contentDisplay="TOP" graphicTextGap="0.0" onAction="#sortStockDesc" prefHeight="47.0" prefWidth="83.0" text="Descending" toggleGroup="$sort">
                                  <graphic>
                                     <FontAwesomeIcon glyphName="SORT_AMOUNT_DESC" size="1.5em" wrappingWidth="14.0" />
                                  </graphic>
@@ -233,7 +213,7 @@
          <children>
             <HBox alignment="CENTER_LEFT" layoutX="-24.0" layoutY="-23.0" prefHeight="53.0" prefWidth="1020.0" styleClass="inner-border-not-round" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
-                  <Label text="Stock-In Manager" wrapText="true">
+                  <Label text="Stocks Manager" wrapText="true">
                      <font>
                         <Font name="Tahoma" size="24.0" />
                      </font>

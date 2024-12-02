@@ -7,37 +7,16 @@ import javafx.fxml.FXML;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.BorderPane;
 
-public class ProdSalesController {
-
-    @FXML
-    private JFXToggleNode amountAsc;
-
-    @FXML
-    private JFXToggleNode amountDesc;
+public class TransactionsController {
 
     @FXML
     private BorderPane basePane;
-
-    @FXML
-    private JFXToggleNode itemidAsc;
-
-    @FXML
-    private JFXToggleNode itemidDesc;
-
-    @FXML
-    private JFXToggleNode nameAsc;
-
-    @FXML
-    private JFXToggleNode nameDesc;
 
     @FXML
     private JFXButton refresh;
 
     @FXML
     private ToggleGroup report;
-
-    @FXML
-    private ToggleGroup sort;
 
     @FXML
     private JFXToggleNode thisMonth;
