@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXToggleNode?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="basePane" minHeight="583.0" minWidth="1020.0" prefHeight="583.0" prefWidth="1020.0" stylesheets="@/styles/team.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.systemprototype.pos.TeamController">
+   <center>
+      <BorderPane prefHeight="590.0" prefWidth="947.0" styleClass="p" BorderPane.alignment="CENTER">
+         <center>
+            <AnchorPane BorderPane.alignment="CENTER">
+               <BorderPane.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" />
+               </BorderPane.margin>
+               <children>
+                  <BorderPane layoutX="278.0" layoutY="77.0" prefHeight="494.0" prefWidth="1000.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <top>
+                        <AnchorPane prefHeight="62.0" prefWidth="327.0" styleClass="inner-border-not-round" BorderPane.alignment="CENTER">
+                           <BorderPane.margin>
+                              <Insets left="5.0" right="5.0" top="5.0" />
+                           </BorderPane.margin>
+                           <children>
+                              <HBox alignment="CENTER_LEFT" fillHeight="false" layoutX="9.0" layoutY="9.0" prefHeight="50.0" prefWidth="388.0" spacing="10.0" AnchorPane.bottomAnchor="6.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="6.0">
+                                 <children>
+                                    <TextField fx:id="searchField" prefHeight="29.0" prefWidth="326.0" promptText="Search a staff.." styleClass="search-field">
+                                       <font>
+                                          <Font name="Tahoma" size="12.0" />
+                                       </font></TextField>
+                                    <JFXButton fx:id="searchBtn" contentDisplay="GRAPHIC_ONLY" prefHeight="29.0" prefWidth="83.0" styleClass="search-btn" HBox.hgrow="NEVER">
+                                       <graphic>
+                                          <FontAwesomeIcon glyphName="SEARCH" size="1.3em" />
+                                       </graphic>
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                    </JFXButton>
+                                 </children>
+                                 <padding>
+                                    <Insets left="10.0" />
+                                 </padding>
+                              </HBox>
+                              <HBox alignment="CENTER" fillHeight="false" layoutX="405.0" layoutY="6.0" prefHeight="56.0" prefWidth="585.0" spacing="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="402.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <JFXButton fx:id="overviewStaff" graphicTextGap="6.0" onAction="#overview" prefHeight="33.0" prefWidth="225.0" ripplerFill="#a9f2e5" styleClass="buttons" text="Overview" HBox.hgrow="ALWAYS">
+                                       <graphic>
+                                          <FontAwesomeIcon glyphName="STREET_VIEW" size="1.3em" />
+                                       </graphic>
+                                       <font>
+                                          <Font name="Tahoma" size="12.0" />
+                                       </font>
+                                    </JFXButton>
+                                    <JFXButton fx:id="addStaff" graphicTextGap="6.0" onAction="#add" prefHeight="33.0" prefWidth="230.0" ripplerFill="#a9f2e5" styleClass="buttons" text="Add Staff">
+                                       <graphic>
+                                          <FontAwesomeIcon glyphName="USER_PLUS" size="1.3em" />
+                                       </graphic>
+                                       <font>
+                                          <Font name="Tahoma" size="12.0" />
+                                       </font>
+                                    </JFXButton>
+                                    <JFXButton fx:id="removeStaff" graphicTextGap="6.0" onAction="#remove" prefHeight="33.0" prefWidth="253.0" ripplerFill="#a9f2e5" styleClass="buttons" text="Remove Staff">
+                                       <graphic>
+                                          <FontAwesomeIcon glyphName="USER_TIMES" size="1.3em" />
+                                       </graphic>
+                                       <font>
+                                          <Font name="Tahoma" size="12.0" />
+                                       </font>
+                                    </JFXButton>
+                                 </children>
+                                 <padding>
+                                    <Insets left="10.0" right="10.0" />
+                                 </padding>
+                              </HBox>
+                           </children>
+                        </AnchorPane>
+                     </top>
+                     <left>
+                        <AnchorPane prefHeight="417.0" prefWidth="399.0" styleClass="inner-border-not-round" BorderPane.alignment="CENTER">
+                           <BorderPane.margin>
+                              <Insets bottom="5.0" left="5.0" top="5.0" />
+                           </BorderPane.margin>
+                           <children>
+                              <AnchorPane layoutX="90.0" layoutY="16.0" prefHeight="200.0" prefWidth="220.0" styleClass="inner-border" AnchorPane.leftAnchor="90.0" AnchorPane.rightAnchor="80.0" AnchorPane.topAnchor="16.0">
+                                 <children>
+                                    <FontAwesomeIcon glyphName="USER" layoutX="47.0" layoutY="173.2857208251953" size="15em" wrappingWidth="141.42857360839844" AnchorPane.bottomAnchor="13.285720825195312" AnchorPane.leftAnchor="41.0" AnchorPane.rightAnchor="40.57142639160156" AnchorPane.topAnchor="16.0" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="27.0" layoutY="236.0" prefHeight="158.0" prefWidth="346.0" styleClass="inner-border" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="246.0">
+                                 <children>
+                                    <Label layoutX="35.0" layoutY="23.0" text="Name:" wrapText="true">
+                                       <font>
+                                          <Font name="Tahoma" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="35.0" layoutY="63.0" text="Role:" wrapText="true">
+                                       <font>
+                                          <Font name="Tahoma" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="35.0" layoutY="104.0" text="Sex:" wrapText="true">
+                                       <font>
+                                          <Font name="Tahoma" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="fname" layoutX="110.0" layoutY="23.0" text="Full Name" wrapText="true">
+                                       <font>
+                                          <Font name="Tahoma" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="role" layoutX="110.0" layoutY="63.0" text="Role" wrapText="true">
+                                       <font>
+                                          <Font name="Tahoma" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="sex" layoutX="110.0" layoutY="104.0" text="Sex" wrapText="true">
+                                       <font>
+                                          <Font name="Tahoma" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="209.0" layoutY="104.0" text="Age:" wrapText="true">
+                                       <font>
+                                          <Font name="Tahoma" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="age" layoutX="284.0" layoutY="104.0" text="Age" wrapText="true">
+                                       <font>
+                                          <Font name="Tahoma" size="18.0" />
+                                       </font>
+                                    </Label>
+                                 </children></AnchorPane>
+                              <JFXButton fx:id="editStaff" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="362.0" layoutY="14.0" onAction="#edit">
+                                 <graphic>
+                                    <FontAwesomeIcon glyphName="PENCIL_SQUARE_ALT" size="1.7em" wrappingWidth="16.399999618530273" />
+                                 </graphic></JFXButton>
+                           </children>
+                        </AnchorPane>
+                     </left>
+                     <center>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="inner-border-not-round" BorderPane.alignment="CENTER">
+                           <BorderPane.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </BorderPane.margin>
+                           <children>
+                              <TableView fx:id="tableView" layoutX="53.0" layoutY="49.0" onMouseClicked="#selectColumn" prefHeight="417.0" prefWidth="586.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <columns>
+                                  <TableColumn prefWidth="75.0" text="C1" />
+                                  <TableColumn prefWidth="75.0" text="C2" />
+                                </columns>
+                                 <columnResizePolicy>
+                                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                 </columnResizePolicy>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                     </center>
+                  </BorderPane>
+               </children>
+            </AnchorPane>
+         </center>
+         <top>
+            <HBox alignment="CENTER_LEFT" prefHeight="0.0" prefWidth="1020.0" style="-fx-border-color: #000000; -fx-border-width: 0px 2px 2px 2px;" BorderPane.alignment="CENTER">
+               <children>
+                  <JFXButton fx:id="refresh" alignment="CENTER" contentDisplay="TOP" graphicTextGap="0.0" prefHeight="47.0" prefWidth="70.0" ripplerFill="#98d0d4" style="-fx-border-width: 0px 1px 0px 0px; -fx-border-color: #000000;" text="Refresh">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <graphic>
+                        <FontAwesomeIcon glyphName="REFRESH" size="1.5em" />
+                     </graphic>
+                     <font>
+                        <Font name="Tahoma" size="12.0" />
+                     </font>
+                  </JFXButton>
+                  <Region prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                  <JFXToggleNode fx:id="nameAsc" contentDisplay="TOP" graphicTextGap="0.0" prefHeight="47.0" prefWidth="83.0" selected="true" style="-fx-border-width: 0px 1px 0px 1px; -fx-border-color: #000000;" text="Ascending">
+                     <graphic>
+                        <FontAwesomeIcon glyphName="SORT_ALPHA_ASC" size="1.5em" wrappingWidth="14.0" />
+                     </graphic>
+                     <selectedColor>
+                        <Color red="0.5960784554481506" green="0.8156862854957581" blue="0.8313725590705872" />
+                     </selectedColor>
+                     <font>
+                        <Font name="Tahoma" size="12.0" />
+                     </font>
+                     <tooltip>
+                        <Tooltip text="Sort by Name in Ascending Order" />
+                     </tooltip>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="sort" />
+                     </toggleGroup>
+                  </JFXToggleNode>
+                  <JFXToggleNode fx:id="nameDesc" contentDisplay="TOP" graphicTextGap="0.0" prefHeight="44.0" prefWidth="83.0" style="-fx-border-width: 0px 1px 0px 0px; -fx-border-color: #000000;" text="Descending" toggleGroup="$sort">
+                     <graphic>
+                        <FontAwesomeIcon glyphName="SORT_ALPHA_DESC" size="1.5em" wrappingWidth="18.0" />
+                     </graphic>
+                     <selectedColor>
+                        <Color red="0.597599983215332" green="0.8145066499710083" blue="0.8299999833106995" />
+                     </selectedColor>
+                     <font>
+                        <Font name="Tahoma" size="12.0" />
+                     </font>
+                     <tooltip>
+                        <Tooltip text="Sort by Name in Descending Order" />
+                     </tooltip>
+                  </JFXToggleNode>
+                  <JFXToggleNode fx:id="itemidAsc" contentDisplay="TOP" graphicTextGap="0.0" prefHeight="47.0" prefWidth="83.0" style="-fx-border-width: 0px 1px 0px 0px; -fx-border-color: #000000;" text="Ascending" toggleGroup="$sort">
+                     <graphic>
+                        <FontAwesomeIcon glyphName="SORT_NUMERIC_ASC" size="1.5em" wrappingWidth="14.0" />
+                     </graphic>
+                     <selectedColor>
+                        <Color red="0.5960784554481506" green="0.8156862854957581" blue="0.8313725590705872" />
+                     </selectedColor>
+                     <font>
+                        <Font name="Tahoma" size="12.0" />
+                     </font>
+                     <tooltip>
+                        <Tooltip text="Sort by ItemID in Ascending Order" />
+                     </tooltip>
+                  </JFXToggleNode>
+                  <JFXToggleNode fx:id="itemidDesc" contentDisplay="TOP" graphicTextGap="0.0" prefHeight="47.0" prefWidth="83.0" style="-fx-border-width: 0px 1px 0px 0px; -fx-border-color: #000000;" text="Descending" toggleGroup="$sort">
+                     <graphic>
+                        <FontAwesomeIcon glyphName="SORT_NUMERIC_DESC" size="1.5em" wrappingWidth="14.0" />
+                     </graphic>
+                     <selectedColor>
+                        <Color red="0.5960784554481506" green="0.8156862854957581" blue="0.8313725590705872" />
+                     </selectedColor>
+                     <font>
+                        <Font name="Tahoma" size="12.0" />
+                     </font>
+                     <tooltip>
+                        <Tooltip text="Sort by ItemID in Descending Order" />
+                     </tooltip>
+                  </JFXToggleNode>
+                  <JFXToggleNode fx:id="amountAsc" contentDisplay="TOP" graphicTextGap="0.0" prefHeight="47.0" prefWidth="83.0" style="-fx-border-width: 0px 1px 0px 0px; -fx-border-color: #000000;" text="Ascending" toggleGroup="$sort">
+                     <graphic>
+                        <FontAwesomeIcon glyphName="SORT_AMOUNT_ASC" size="1.5em" wrappingWidth="14.0" />
+                     </graphic>
+                     <selectedColor>
+                        <Color red="0.5960784554481506" green="0.8156862854957581" blue="0.8313725590705872" />
+                     </selectedColor>
+                     <font>
+                        <Font name="Tahoma" size="12.0" />
+                     </font>
+                     <tooltip>
+                        <Tooltip text="Sort by Stocks in Ascending Order" />
+                     </tooltip>
+                  </JFXToggleNode>
+                  <JFXToggleNode fx:id="amountDesc" contentDisplay="TOP" graphicTextGap="0.0" prefHeight="47.0" prefWidth="83.0" text="Descending" toggleGroup="$sort">
+                     <graphic>
+                        <FontAwesomeIcon glyphName="SORT_AMOUNT_DESC" size="1.5em" wrappingWidth="14.0" />
+                     </graphic>
+                     <selectedColor>
+                        <Color red="0.5960784554481506" green="0.8156862854957581" blue="0.8313725590705872" />
+                     </selectedColor>
+                     <font>
+                        <Font name="Tahoma" size="12.0" />
+                     </font>
+                     <tooltip>
+                        <Tooltip text="Sort by Stocks in Descending Order" />
+                     </tooltip>
+                  </JFXToggleNode>
+               </children>
+            </HBox>
+         </top>
+      </BorderPane>
+   </center>
+   <top>
+      <AnchorPane prefHeight="40.0" prefWidth="1020.0" style="-fx-background-color: #d3d3d3;" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="53.0" prefWidth="1020.0" styleClass="inner-border-not-round" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Label text="Staff Management" wrapText="true">
+                     <font>
+                        <Font name="Tahoma" size="24.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+   </top>
+</BorderPane>

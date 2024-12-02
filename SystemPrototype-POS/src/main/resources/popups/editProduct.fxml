@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<TabPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="popupWindows.EditProductController">
+   <tabs>
+      <Tab fx:id="step1" closable="false" styleClass="inner-field" text="Step 1">
+         <content>
+            <BorderPane prefHeight="463.0" prefWidth="463.0">
+               <center>
+                  <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0">
+                      <stylesheets>
+                          <URL value="@/styles/addproduct.css" />
+                      </stylesheets>
+                     <BorderPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </BorderPane.margin>
+                     <children>
+                        <Label layoutX="38.0" layoutY="33.0" text="Product Name" wrapText="true">
+                           <font>
+                              <Font name="Tahoma" size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="prodName" layoutX="38.0" layoutY="58.0" prefHeight="27.0" prefWidth="203.0" promptText="Ex. Milktea">
+                           <font>
+                              <Font name="Tahoma" size="12.0" />
+                           </font>
+                           <styleClass>
+                              <String fx:value="inner-border-not-round" />
+                              <String fx:value="inner-field" />
+                           </styleClass>
+                        </TextField>
+                        <Label layoutX="283.0" layoutY="33.0" text="Product Price" wrapText="true">
+                           <font>
+                              <Font name="Tahoma" size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="prodPrice" layoutX="283.0" layoutY="58.0" prefHeight="27.0" prefWidth="203.0" promptText="Ex. 50.00">
+                           <font>
+                              <Font name="Tahoma" size="12.0" />
+                           </font>
+                           <styleClass>
+                              <String fx:value="inner-border-not-round" />
+                              <String fx:value="inner-field" />
+                           </styleClass>
+                        </TextField>
+                        <TextArea fx:id="prodDesc" layoutX="38.0" layoutY="145.0" prefHeight="146.0" prefWidth="449.0" promptText="Ex. Yummy and creamy" wrapText="true">
+                           <styleClass>
+                              <String fx:value="inner-border-not-round" />
+                              <String fx:value="inner-field" />
+                           </styleClass>
+                        </TextArea>
+                        <Label layoutX="38.0" layoutY="120.0" text="Product Description" wrapText="true">
+                           <font>
+                              <Font name="Tahoma" size="18.0" />
+                           </font>
+                        </Label>
+                        <Separator layoutX="14.0" layoutY="334.0" prefHeight="2.0" prefWidth="524.0" style="-fx-background-color: #000000;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                        <JFXButton fx:id="next1" layoutX="398.0" layoutY="355.0" onAction="#nextBtn1" prefHeight="25.0" prefWidth="96.0" styleClass="buttons" text="Next &gt;&gt;" />
+                        <JFXButton disable="true" layoutX="289.0" layoutY="355.0" prefHeight="35.0" prefWidth="96.0" styleClass="buttons" text="&lt;&lt; Previous" />
+                        <Label layoutX="158.0" layoutY="41.0" text="Limit : 120 chars" wrapText="true">
+                           <font>
+                              <Font name="Tahoma" size="10.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="401.0" layoutY="41.0" text="Limit : 120 chars" wrapText="true">
+                           <font>
+                              <Font name="Tahoma" size="10.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="204.0" layoutY="128.0" text="Limit : 300 chars" wrapText="true">
+                           <font>
+                              <Font name="Tahoma" size="10.0" />
+                           </font>
+                        </Label>
+                        <JFXButton fx:id="reload" layoutX="38.0" layoutY="355.0" onAction="#reload" prefHeight="25.0" prefWidth="96.0" styleClass="buttons" text="Reload" />
+                     </children>
+                     <styleClass>
+                        <String fx:value="inner-border-not-round" />
+                        <String fx:value="p" />
+                     </styleClass>
+                  </AnchorPane>
+               </center>
+               <top>
+                  <AnchorPane prefHeight="34.0" prefWidth="596.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <HBox alignment="CENTER_LEFT" prefHeight="42.0" prefWidth="531.0" style="-fx-border-color: #000000; -fx-border-width: 0px 0px 1px 0px;" styleClass="p">
+                           <children>
+                              <Label text="Edit Product Details" wrapText="true">
+                                 <font>
+                                    <Font name="Tahoma" size="24.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="20.0" />
+                                 </HBox.margin>
+                              </Label>
+                           </children>
+                        </HBox>
+                     </children>
+                  </AnchorPane>
+               </top>
+               <styleClass>
+                  <String fx:value="inner-border-not-round" />
+                  <String fx:value="pb" />
+               </styleClass>
+            </BorderPane>
+         </content>
+      </Tab>
+      <Tab fx:id="step2" closable="false" styleClass="inner-field" text="Step 2">
+         <content>
+            <BorderPane prefHeight="463.0" prefWidth="463.0">
+               <center>
+                  <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0">
+                     <stylesheets>
+                        <URL value="@/styles/addproduct.css" />
+                     </stylesheets>
+                     <BorderPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </BorderPane.margin>
+                     <children>
+                        <Label layoutX="38.0" layoutY="33.0" text="Category Name" wrapText="true">
+                           <font>
+                              <Font name="Tahoma" size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="catName" layoutX="38.0" layoutY="58.0" prefHeight="27.0" prefWidth="203.0" promptText="Ex. Drinks">
+                           <font>
+                              <Font name="Tahoma" size="12.0" />
+                           </font>
+                           <styleClass>
+                              <String fx:value="inner-border-not-round" />
+                              <String fx:value="inner-field" />
+                           </styleClass>
+                        </TextField>
+                        <Separator layoutX="14.0" layoutY="334.0" prefHeight="2.0" prefWidth="524.0" style="-fx-background-color: #000000;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                        <JFXButton fx:id="next2" layoutX="398.0" layoutY="355.0" onAction="#nextBtn2" prefHeight="25.0" prefWidth="96.0" styleClass="buttons" text="Next &gt;&gt;" />
+                        <JFXButton fx:id="prev2" layoutX="289.0" layoutY="355.0" onAction="#prevBtn2" prefHeight="25.0" prefWidth="96.0" styleClass="buttons" text="&lt;&lt; Previous" />
+                        <TextArea fx:id="catDesc" layoutX="38.0" layoutY="145.0" prefHeight="146.0" prefWidth="449.0" promptText="Ex. Refreshing" wrapText="true">
+                           <styleClass>
+                              <String fx:value="inner-border-not-round" />
+                              <String fx:value="inner-field" />
+                           </styleClass>
+                        </TextArea>
+                        <Label layoutX="38.0" layoutY="120.0" text="Category Description" wrapText="true">
+                           <font>
+                              <Font name="Tahoma" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="210.0" layoutY="128.0" text="Limit : 300 chars" wrapText="true">
+                           <font>
+                              <Font name="Tahoma" size="10.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="168.0" layoutY="41.0" text="Limit : 120 chars" wrapText="true">
+                           <font>
+                              <Font name="Tahoma" size="10.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <styleClass>
+                        <String fx:value="inner-border-not-round" />
+                        <String fx:value="p" />
+                     </styleClass>
+                  </AnchorPane>
+               </center>
+               <top>
+                  <AnchorPane prefHeight="34.0" prefWidth="596.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <HBox alignment="CENTER_LEFT" prefHeight="42.0" prefWidth="531.0" style="-fx-border-color: #000000; -fx-border-width: 0px 0px 1px 0px;" styleClass="p">
+                           <children>
+                              <Label text="Edit Category Details" wrapText="true">
+                                 <font>
+                                    <Font name="Tahoma" size="24.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="20.0" />
+                                 </HBox.margin>
+                              </Label>
+                           </children>
+                        </HBox>
+                     </children>
+                  </AnchorPane>
+               </top>
+               <styleClass>
+                  <String fx:value="inner-border-not-round" />
+                  <String fx:value="pb" />
+               </styleClass>
+            </BorderPane>
+         </content>
+      </Tab>
+      <Tab fx:id="step3" closable="false" styleClass="inner-field" text="Step 3">
+         <content>
+            <BorderPane prefHeight="463.0" prefWidth="463.0">
+               <center>
+                  <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0">
+                     <stylesheets>
+                        <URL value="@/styles/addproduct.css" />
+                     </stylesheets>
+                     <BorderPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </BorderPane.margin>
+                     <children>
+                        <Label layoutX="38.0" layoutY="33.0" text="Stock Quantity" wrapText="true">
+                           <font>
+                              <Font name="Tahoma" size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="stockSize" layoutX="38.0" layoutY="58.0" prefHeight="27.0" prefWidth="203.0" promptText="Ex. 10">
+                           <font>
+                              <Font name="Tahoma" size="12.0" />
+                           </font>
+                           <styleClass>
+                              <String fx:value="inner-border-not-round" />
+                              <String fx:value="inner-field" />
+                           </styleClass>
+                        </TextField>
+                        <Separator layoutX="14.0" layoutY="334.0" prefHeight="2.0" prefWidth="524.0" style="-fx-background-color: #000000;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                        <JFXButton fx:id="save" layoutX="398.0" layoutY="355.0" onAction="#onSave" prefHeight="25.0" prefWidth="96.0" styleClass="buttons" text="Edit" />
+                        <JFXButton fx:id="previous3" layoutX="289.0" layoutY="355.0" onAction="#prevBtn3" prefHeight="25.0" prefWidth="96.0" styleClass="buttons" text="&lt;&lt; Previous" />
+                        <Label layoutX="38.0" layoutY="120.0" text="Manufactured On" wrapText="true">
+                           <font>
+                              <Font name="Tahoma" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="283.0" layoutY="33.0" text="Stock Limit" wrapText="true">
+                           <font>
+                              <Font name="Tahoma" size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="stockLimit" layoutX="283.0" layoutY="58.0" prefHeight="27.0" prefWidth="203.0" promptText="When to notify if stock is low">
+                           <font>
+                              <Font name="Tahoma" size="12.0" />
+                           </font>
+                           <styleClass>
+                              <String fx:value="inner-border-not-round" />
+                              <String fx:value="inner-field" />
+                           </styleClass>
+                        </TextField>
+                        <DatePicker fx:id="manufactured" editable="false" layoutX="38.0" layoutY="143.0" prefHeight="27.0" prefWidth="203.0" promptText="-- Select a Date--" showWeekNumbers="true">
+                           <styleClass>
+                              <String fx:value="inner-border-not-round" />
+                              <String fx:value="inner-field" />
+                           </styleClass></DatePicker>
+                        <Label layoutX="283.0" layoutY="120.0" text="Expiring On" wrapText="true">
+                           <font>
+                              <Font name="Tahoma" size="18.0" />
+                           </font>
+                        </Label>
+                        <DatePicker fx:id="expiration" editable="false" layoutX="283.0" layoutY="143.0" prefHeight="27.0" prefWidth="203.0" promptText="-- Select a Date--" showWeekNumbers="true">
+                           <styleClass>
+                              <String fx:value="inner-border-not-round" />
+                              <String fx:value="inner-field" />
+                           </styleClass></DatePicker>
+                        <Label layoutX="38.0" layoutY="213.0" text="Supplier" wrapText="true">
+                           <font>
+                              <Font name="Tahoma" size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="supplier" layoutX="38.0" layoutY="238.0" prefHeight="27.0" prefWidth="449.0" promptText="Supplier Name">
+                           <font>
+                              <Font name="Tahoma" size="12.0" />
+                           </font>
+                           <styleClass>
+                              <String fx:value="inner-border-not-round" />
+                              <String fx:value="inner-field" />
+                           </styleClass>
+                        </TextField>
+                        <Label layoutX="112.0" layoutY="221.0" text="Limit : 120 chars" wrapText="true">
+                           <font>
+                              <Font name="Tahoma" size="10.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <styleClass>
+                        <String fx:value="p" />
+                        <String fx:value="inner-border-not-round" />
+                     </styleClass>
+                  </AnchorPane>
+               </center>
+               <top>
+                  <AnchorPane prefHeight="34.0" prefWidth="596.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <HBox alignment="CENTER_LEFT" prefHeight="42.0" prefWidth="531.0" style="-fx-border-color: #000000; -fx-border-width: 0px 0px 1px 0px;" styleClass="p">
+                           <children>
+                              <Label text="Edit Stock Details" wrapText="true">
+                                 <font>
+                                    <Font name="Tahoma" size="24.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="20.0" />
+                                 </HBox.margin>
+                              </Label>
+                           </children>
+                        </HBox>
+                     </children>
+                  </AnchorPane>
+               </top>
+               <styleClass>
+                  <String fx:value="inner-border-not-round" />
+                  <String fx:value="pb" />
+               </styleClass>
+            </BorderPane>
+         </content>
+      </Tab>
+   </tabs>
+</TabPane>

@@ -1,0 +1,102 @@
+.paned {
+    -fx-background-radius: 10px;
+    -fx-background-color: #fff5b4;
+}
+
+.p {
+    -fx-background-color: #cfdad6; 
+}
+
+.inner-border {
+    -fx-border-color: #000000;
+    -fx-border-width: 2px;
+    -fx-border-insets: 0px;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+}
+
+.inner-border-not-round {
+    -fx-border-color: #000000;
+    -fx-border-width: 2px;
+    -fx-border-insets: 0px;
+}
+
+.navbar {
+    -fx-background-color: #170e00;
+}
+
+.navbar-btn {
+    -fx-background-color: #170e00;
+    -fx-text-fill: #ffcf81;
+    -fx-background-radius: 0px;
+}
+
+.navbar-btn:hover {
+    -fx-background-color: #5c3217;
+    -fx-border-color: #c7b280;
+    -fx-border-inset: 0px 0px 0px 0px;
+    -fx-border-width: 0px 0px 3px 0px;
+}
+
+.navbar-btn:selected {
+    -fx-background-color: #5c3217;
+    -fx-border-color: #c7b280;
+    -fx-border-inset: 5px 0px 0px 0px;
+    -fx-border-width: 0px 0px 3px 0px;
+}
+
+.navbar-icon {
+    -fx-fill: #ffcf81;
+}
+
+.search-field {
+    -fx-background-color: #fffff2;
+    -fx-background-radius: 50px;
+    -fx-text-fill: #000000;
+    -fx-prompt-text-fill: #000000;
+    -fx-border-color: #339a89;
+    -fx-border-radius: 50px;
+    -fx-border-width: 2px;
+}
+
+.search-field:focused {
+    -fx-border-color: #00eeff;
+}
+
+.search-field:hover {
+    -fx-border-color: #00eeff;
+}
+
+.search-btn {
+    -fx-background-color: #fffff2;
+    -fx-background-radius: 100px;
+    -fx-text-fill: #000000;
+    -fx-border-color: #339a89;
+    -fx-border-radius: 100px;
+    -fx-border-width: 2px;
+}
+
+.search-btn:hover {
+    -fx-border-color: #00eeff;
+}
+.search-btn:active {
+    -fx-border-color: #000000;
+}
+
+.buttons {
+    -fx-text-fill: #000000;
+    -fx-background-color: #fffff2;
+    -fx-background-radius: 40px;
+    -fx-border-color: #339a89;
+    -fx-border-insets: 2.5px;
+    -fx-border-width: 2px;
+    -fx-border-radius: 35px;
+}
+
+.buttons:hover {
+    -fx-cursor: HAND;
+    -fx-background-color: #339a89;
+    -fx-text-fill: #000000;
+    -fx-border-color: #00eeff;
+    -fx-border-width: 1.5px;
+}
